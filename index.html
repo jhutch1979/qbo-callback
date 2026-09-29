@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en"><head><title>QuickBooks Connection Callback - Sunnies Up North LLC</title>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><style>body{font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;max-width:720px;margin:0 auto;padding:1.25rem;line-height:1.6;color:#222}h1{font-size:1.6rem}code,textarea{font-family:ui-monospace,Menlo,Consolas,monospace}textarea{width:100%;box-sizing:border-box;padding:.5rem;font-size:.9rem}button{margin:.25rem 0 1rem;padding:.4rem .9rem}nav a{margin-right:1rem}footer{margin-top:2rem;font-size:.85rem;color:#666}</style></head><body>
+<h1>QuickBooks Connection Callback</h1>
+<p><strong>Copy the full URL from your address bar into the tool.</strong> This page only displays values from the current URL in your browser. It does not send, store, or transmit anything.</p>
+<h2>Full URL</h2><textarea id="url" rows="4" readonly></textarea><br><button data-t="url">Copy</button>
+<h2>code</h2><textarea id="code" rows="2" readonly></textarea><br><button data-t="code">Copy</button>
+<h2>realmId</h2><textarea id="realmId" rows="1" readonly></textarea><br><button data-t="realmId">Copy</button>
+<h2>state</h2><textarea id="state" rows="1" readonly></textarea><br><button data-t="state">Copy</button>
+<nav><a href="privacy.html">Privacy Policy</a><a href="eula.html">End User License Agreement</a></nav>
+<footer>Sunnies Up North LLC internal tool. Last updated: 2026-09-29</footer>
+<script>
+(function(){
+var p=new URLSearchParams(window.location.search);
+function set(id,v){document.getElementById(id).value=v;}
+set('url',window.location.href);
+['code','realmId','state'].forEach(function(k){set(k,p.get(k)||'(not present)');});
+document.querySelectorAll('button[data-t]').forEach(function(b){
+b.addEventListener('click',function(){
+var el=document.getElementById(b.getAttribute('data-t'));
+el.focus();el.select();
+try{if(navigator.clipboard){navigator.clipboard.writeText(el.value);}else{document.execCommand('copy');}}catch(e){document.execCommand('copy');}
+});});
+})();
+</script></body></html>
